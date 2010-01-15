@@ -1,13 +1,23 @@
-JqstarRating
+jqstar_rating
 ============
 
-Introduction goes here.
+This plugin is completely based on edgarjs's ajaxful-rating http://github.com/edgarjs/ajaxful-rating
+
+Why?
+===========
+I made it because I have a different point of view on how a rating plugin should work, also
+I wanted it to work with Jquery, since I'm using it already on my projects.
+
+Details
+============
+Edgar's work on the model part of the plugin was perfect for my needs, so I've copied it shamelessly.
+For the view part, i made a new helper, with generates code to use the jQuery Star Widget http://orkans-tmp.22web.net/star_rating/
 
 
 Example
 =======
 
-Example goes here.
+
 
 
 Copyright (c) 2009 [name of plugin creator], released under the MIT license
