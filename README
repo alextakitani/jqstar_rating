@@ -11,11 +11,11 @@ I wanted it to work with Jquery, since I'm using it already on my projects.
 Details
 ============
 Edgar's work on the model part of the plugin was perfect for my needs, so I've copied it shamelessly.
-For the view part, i made a new helper, with generates code to use the jQuery Star Widget http://orkans-tmp.22web.net/star_rating/
+For the view part, I've made a new helper, with generates code to use the jQuery Star Widget http://orkans-tmp.22web.net/star_rating/
 
+To install the plugin:
 
-Example
-=======
+  @script/plugin install git://github.com/edgarjs/ajaxful-rating.git@
 
 
 
