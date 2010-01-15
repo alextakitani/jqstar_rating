@@ -1,0 +1,3 @@
+sqlite3:
+  :adapter: sqlite3
+  :database: vendor/plugins/jqstar_rating/test/jqstar_rating_plugin.sqlite3.db

@@ -1,0 +1,1 @@
+require 'jqstar_rating'
