@@ -13,11 +13,64 @@ Details
 Edgar's work on the model part of the plugin was perfect for my needs, so I've copied it shamelessly.
 For the view part, I've made a new helper, with generates code to use the jQuery Star Widget http://orkans-tmp.22web.net/star_rating/
 
-To install the plugin:
+And the thanks goes to...
+==========================
+Edgar for the amazing job on witch this plugin is based
 
-  @script/plugin install git://github.com/edgarjs/ajaxful-rating.git@
+My beloved wife Fernanda who motivated me saying: "Hey I like when pages have those star things".
 
 
+Installation & Setup
+=====================
 
+1. install using:
 
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+    script/plugin install git://github.com/alextakitani/jqstar_rating.git
+
+2. run the generator that will bla bla bla...
+
+    script/generate jqstar_rating user
+
+ The generator takes as argument the name of *YOUR* user model. 
+
+3. configure your models adding to them:
+
+    class Movie < ActiveRecord::Base
+      jqstar_rateable :stars => 10,:dimensions => [:acting,:screen_play]
+    end
+
+    The accepted parameters are:
+
+    :stars The number of stars
+    :cache_column Name of the column for storing the cached rating average.
+    :dimensions Array of dimensions. Allows to rate the model on various dimensions. On the
+    above example, acting and screen play.
+
+    Configure also your user model, adding a relation to the Rate model
+
+    class User < ActiveRecord::Base
+       has_many :rates
+    end
+
+4. modify your routes to map a rate action:
+
+    map.resources :movies, :member => {:rate => :post}
+
+Using
+========
+There are 3 helper methods
+
+    ratings_for(rateable, *args)
+
+    Where:
+     rateable, the model class
+     args, a options Hash
+
+        Key            Type     Default                         Does...
+        :show_caption  boolean  true                            shows caption :)
+        :dimension     string   empty                           self explanatory
+        :callback      string   call controller's rate method   javascript method that runs on star clicking 
+        :disabled      boolean  false                           no clicking allowed
+        :split
+
+Copyright (c) 2010 Alex Fernandes Takitani, released under the MIT license
